@@ -21,10 +21,10 @@ const Button = ({
     <button
       {...atributes}
       onClick={handleClick}
-      className={`${getClasses()} flex items-center text-[18px] leading-[120%] group duration-300 transition-all ease-in-out`}
+      className={`${getClasses()} flex items-center text-[18px] leading-[120%] group duration-200 transition-all ease-in`}
     >
-      <p className="overflow-hidden max-h-[24px] w-fit  flex gap-[px] flex-col mx-auto">
-        <span className="group-hover:translate-y-[-24px] translate-y-0 duration-300 transition-all ease-in-out">
+      <p className="overflow-hidden max-h-[24px] w-fit   flex gap-[1px] flex-col mx-auto">
+        <span className="group-hover:translate-y-[-24px] translate-y-0 duration-200 transition-all ease-in">
           {text}
         </span>
         <span
@@ -34,7 +34,7 @@ const Button = ({
               : varient == "secondary"
               ? "text-[#121212] "
               : "text-[#808080]"
-          } duration-300 transition-all ease-in-out`}
+          } duration-200 transition-all ease-in`}
         >
           {text}
         </span>

@@ -34,8 +34,10 @@ const Hero = () => {
             desce={
               "Discover Uniquely Crafted Bouquets and Gifts for Any Occasion: Spread Joy with Our Online Flower Delivery Service"
             }
-            titleStyles={"text-[67px] max-w-[400px] "}
-            desceStyles={"text-[22px] "}
+            titleStyles={"text-[67px] max-w-[500px] max-h-[160px] "}
+            desceStyles={"text-[22px] max-h-[53px]"}
+            titleY={170}
+            desceY={70.7}
           />
         </div>
         <div className="flex gap-[24px]">
@@ -49,7 +51,8 @@ const Hero = () => {
               desce={
                 "Experience the joy of giving with our modern floral studio. Order online and send fresh flowers, plants and gifts today."
               }
-              desceStyles={"text-[18px] opacity-90"}
+              desceStyles={"text-[18px] opacity-90 max-h-[65px]"}
+              desceY={85}
             />
           </div>
         </div>
@@ -60,6 +63,8 @@ const Hero = () => {
             key={index + "category"}
             className={`flex group w-full ${
               index != categoryData.length - 1 && "border-b"
+            } ${
+              index == 1 || index == 3 ? "flex-row-reverse" : "flex-row"
             } border-l border-[#121212]`}
           >
             <div className="relative flex border-r border-[#121212] items-end justify-center w-full max-w-[50%] min-h-[400px] max-h-[400px] pb-[24px] ">
@@ -68,8 +73,12 @@ const Hero = () => {
                 {item.name}
               </h1>
             </div>
-            <div className="w-full max-w-[50%] min-h-[400px] max-h-[400px]">
-              <img src={item.src} className="w-full h-full " alt="" />
+            <div className="w-full max-w-[50%] overflow-hidden min-h-[400px] max-h-[400px] cursor-pointer">
+              <img
+                src={item.src}
+                className="w-full h-full group-hover:scale-[1.25] duration-[0.4s] transition-all ease-in-out"
+                alt=""
+              />
             </div>
           </div>
         ))}

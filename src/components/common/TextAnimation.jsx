@@ -9,45 +9,95 @@ const TextAnimation = ({
   labelStyles,
   titleStyles,
   desceStyles,
+  titleY,
+  desceY,
+  labelY,
 }) => {
   return (
     <div className="flex flex-col gap-[24px]">
       {label && (
-        <motion.p
-          className={`${
-            labelStyles || "text-[#121212] opacity-90"
-          } leading-[120%] duration-500`}
-          variants={textReveal}
-          initial="hidden"
-          whileInView="show"
-        >
-          {label}
-        </motion.p>
+        <div className={`${labelStyles} text-[42px] overflow-hidden`}>
+          <motion.p
+            className={` text-[#121212] opacity-90 leading-[120%] duration-500`}
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: labelY,
+                rotate: 5,
+              },
+              show: {
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                transition: {
+                  type: "all",
+                  ease: "easeIn",
+                },
+              },
+            }}
+            initial="hidden"
+            whileInView="show"
+          >
+            {label}
+          </motion.p>
+        </div>
       )}
       <div className="flex flex-col gap-[16px]">
         {title && (
-          <motion.h1
-            className={`${
-              titleStyles || "text-[42px]  text-[#121212]"
-            } leading-[120%] duration-[0.4s]`}
-            variants={textReveal}
-            initial="hidden"
-            whileInView="show"
-          >
-            {title}
-          </motion.h1>
+          <div className={`${titleStyles}   text-[#121212] overflow-hidden `}>
+            <motion.h1
+              className={`leading-[120%] duration-[0.7s] `}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: titleY,
+                  rotate: 8,
+                },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  rotate: 0,
+                  transition: {
+                    type: "all",
+                    ease: "easeIn",
+                  },
+                },
+              }}
+              initial="hidden"
+              whileInView="show"
+            >
+              {title}
+            </motion.h1>
+          </div>
         )}
         {desce && (
-          <motion.p
-            variants={textReveal}
-            initial="hidden"
-            whileInView="show"
-            className={`${
-              desceStyles || "text-[18px] text-[#121212]"
-            }  leading-[120%] duration-500`}
+          <div
+            className={`${desceStyles}  text-[18px] text-[#121212] overflow-hidden`}
           >
-            {desce}
-          </motion.p>
+            <motion.p
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: desceY,
+                  rotate: 6,
+                },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  rotate: 0,
+                  transition: {
+                    type: "all",
+                    ease: "easeIn",
+                  },
+                },
+              }}
+              initial="hidden"
+              whileInView="show"
+              className={`leading-[120%] duration-500`}
+            >
+              {desce}
+            </motion.p>
+          </div>
         )}
       </div>
     </div>
