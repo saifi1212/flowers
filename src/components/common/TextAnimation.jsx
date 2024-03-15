@@ -9,34 +9,30 @@ const TextAnimation = ({
   labelStyles,
   titleStyles,
   desceStyles,
-  titleY,
-  desceY,
-  labelY,
 }) => {
   return (
     <div className="flex flex-col gap-[24px]">
       {label && (
-        <div className={`${labelStyles} text-[42px] overflow-hidden`}>
+        <div className={`${labelStyles} text-[18px] overflow-hidden`}>
           <motion.p
             className={` text-[#121212] opacity-90 leading-[120%] duration-500`}
             variants={{
               hidden: {
                 opacity: 0,
-                y: labelY,
-                rotate: 5,
+                y: `${100}%`,
               },
               show: {
                 opacity: 1,
                 y: 0,
-                rotate: 0,
                 transition: {
                   type: "all",
-                  ease: "easeIn",
+                  ease: "easeOut",
                 },
               },
             }}
             initial="hidden"
-            whileInView="show"
+            whileInView={"show"}
+            viewport={{ once: true }}
           >
             {label}
           </motion.p>
@@ -44,27 +40,28 @@ const TextAnimation = ({
       )}
       <div className="flex flex-col gap-[16px]">
         {title && (
-          <div className={`${titleStyles}   text-[#121212] overflow-hidden `}>
+          <div
+            className={`${titleStyles}  text-[42px] text-[#121212] overflow-hidden `}
+          >
             <motion.h1
               className={`leading-[120%] duration-[0.7s] `}
               variants={{
                 hidden: {
                   opacity: 0,
-                  y: titleY,
-                  rotate: 8,
+                  y: `${99}%`,
                 },
                 show: {
                   opacity: 1,
                   y: 0,
-                  rotate: 0,
                   transition: {
                     type: "all",
-                    ease: "easeIn",
+                    ease: "easeOut",
                   },
                 },
               }}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
             >
               {title}
             </motion.h1>
@@ -78,21 +75,20 @@ const TextAnimation = ({
               variants={{
                 hidden: {
                   opacity: 0,
-                  y: desceY,
-                  rotate: 6,
+                  y: `${100}%`,
                 },
                 show: {
                   opacity: 1,
                   y: 0,
-                  rotate: 0,
                   transition: {
                     type: "all",
-                    ease: "easeIn",
+                    ease: "easeOut",
                   },
                 },
               }}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               className={`leading-[120%] duration-500`}
             >
               {desce}
