@@ -15,6 +15,8 @@ const Button = ({
       return `w-full ${maxWidth} text-[#fff] bg-[#121212] hover:bg-[#fff] border border-[#121212] min-h-[56px]`;
     } else if (varient == "secondary") {
       return `w-full ${maxWidth} text-[#121212] bg-[#fff] hover:bg-[#121212] border border-[#121212] min-h-[56px]`;
+    } else if (varient == "transparent") {
+      return `w-full ${maxWidth} text-[#fff] bg-transparent hover:bg-[#ffffff] border border-[#ffffff] min-h-[56px]`;
     }
   };
   return (
@@ -33,7 +35,9 @@ const Button = ({
               ? "text-[#121212]"
               : varient == "secondary"
               ? "text-[#fff] "
-              : "text-[#808080]"
+              : varient == "normal"
+              ? "text-[#808080]"
+              : varient == "transparent" && "text-[#121212]"
           } duration-200 transition-all ease-in`}
         >
           {text}

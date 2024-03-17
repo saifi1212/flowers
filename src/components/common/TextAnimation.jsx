@@ -13,9 +13,9 @@ const TextAnimation = ({
   return (
     <div className="flex flex-col gap-[24px]">
       {label && (
-        <div className={`${labelStyles} text-[18px] overflow-hidden`}>
+        <div className={`${labelStyles} text-[#121212] text-[18px] overflow-hidden`}>
           <motion.p
-            className={` text-[#121212] opacity-90 leading-[120%] duration-500`}
+            className={`  opacity-90 leading-[120%] duration-500`}
             variants={{
               hidden: {
                 opacity: 0,
@@ -75,7 +75,7 @@ const TextAnimation = ({
               variants={{
                 hidden: {
                   opacity: 0,
-                  y: `${100}%`,
+                  y: `${99}%`,
                 },
                 show: {
                   opacity: 1,

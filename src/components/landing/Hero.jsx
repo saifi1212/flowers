@@ -27,15 +27,15 @@ const Hero = () => {
   ];
   return (
     <div className="w-full flex ">
-      <div className="max-w-[50%] sticky top-[80px] w-full h-fit border-b border-r border-[#121212] p-[80px] flex flex-col gap-[24px] ">
+      <div className="max-w-[50%] sticky top-[80px] w-full h-fit border-b  border-[#121212] p-[80px] flex flex-col gap-[24px] ">
         <div className="pb-[88px] border-b border-[#121212]">
           <TextAnimation
             title={"Kyiv LuxeBouquets®"}
             desce={
               "Discover Uniquely Crafted Bouquets and Gifts for Any Occasion: Spread Joy with Our Online Flower Delivery Service"
             }
-            titleStyles={"text-[67px] max-w-[500px] max-h-[160px] "}
-            desceStyles={"text-[22px] max-h-[53px]"}
+            titleStyles={"text-[67px] max-w-[500px]  "}
+            desceStyles={"text-[22px] "}
           
           />
         </div>
@@ -50,13 +50,13 @@ const Hero = () => {
               desce={
                 "Experience the joy of giving with our modern floral studio. Order online and send fresh flowers, plants and gifts today."
               }
-              desceStyles={"text-[18px] opacity-90 max-h-[65px]"}
+              desceStyles={"text-[18px] opacity-90 "}
               
             />
           </div>
         </div>
       </div>
-      <div className="max-w-[50%] w-full border-b  border-[#121212]">
+      <div className="max-w-[50%] w-full border-b border-l border-[#121212]">
         {categoryData.map((item, index) => (
           <div
             key={index + "category"}
